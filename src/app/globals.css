@@ -2,32 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+body{
+  background-color: #222;
+  color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Modern slim dark scrollbar */
+/* Webkit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333; /* color of the track */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555; /* color of the handle */
+  border-radius: 4px; /* roundness of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777; /* color of the handle on hover */
+}
+
+
+button:disabled{
+  opacity: 70%;
 }
